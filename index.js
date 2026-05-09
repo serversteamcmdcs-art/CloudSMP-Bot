@@ -2,6 +2,7 @@ require('dotenv').config();
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const fs = require('fs');
 const http = require('http');
+const axios = require('axios');
 const ticketHandler = require('./handlers/ticketHandler');
 
 // Минимальный HTTP-сервер для Render (требует открытый порт)
@@ -12,6 +13,20 @@ http.createServer((req, res) => {
 }).listen(PORT, () => {
   console.log(`🌐 HTTP сервер запущен на порту ${PORT}`);
 });
+
+// Keepalive — не даёт Render усыплять сервис
+const url = `https://yourappname.onrender.com/`; // Замените на URL вашего сервиса
+const interval = 30000; // Интервал в миллисекундах (30 секунд)
+function reloadWebsite() {
+  axios.get(url)
+    .then(response => {
+      console.log(`Перезапущен в ${new Date().toISOString()}: Статус-код ${response.status}`);
+    })
+    .catch(error => {
+      console.error(`Ошибка перезагрузки в ${new Date().toISOString()}:`, error.message);
+    });
+}
+setInterval(reloadWebsite, interval);
 
 const client = new Client({
   intents: [
