@@ -20,7 +20,7 @@ module.exports = {
         'и не создавайте несколько тикетов по одной и той же проблеме.**'
       )
       .setColor(0x5865F2)
-      .setImage('https://website.donutsmp.org/store.png');
+      .setImage('https://raw.githubusercontent.com/serversteamcmdcs-art/CloudSMP-Bot/refs/heads/main/img/ec040fe49aa30feb.png');
 
     // Строка 1: Ban Appeal + Mute Appeal (красные)
     const row1 = new ActionRowBuilder().addComponents(
@@ -38,11 +38,6 @@ module.exports = {
 
     // Строка 2: Media + Discord Report (синие)
     const row2 = new ActionRowBuilder().addComponents(
-      new ButtonBuilder()
-        .setCustomId('ticket_media')
-        .setLabel('Медиа')
-        .setEmoji('🎬')
-        .setStyle(ButtonStyle.Primary),
       new ButtonBuilder()
         .setCustomId('ticket_report')
         .setLabel('Жалоба на игрока')
