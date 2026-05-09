@@ -12,7 +12,6 @@ const {
 const TICKET_TYPES = {
   ticket_ban:        { name: 'ban-appeal',      label: 'Апелляция бана' },
   ticket_mute:       { name: 'mute-appeal',     label: 'Апелляция мута' },
-  ticket_media:      { name: 'media',           label: 'Медиа' },
   ticket_report:     { name: 'discord-report',  label: 'Жалоба на игрока' },
   ticket_bug:        { name: 'bug-report',      label: 'Баг-репорт' },
   ticket_connection: { name: 'connection',      label: 'Проблема с подключением' },
