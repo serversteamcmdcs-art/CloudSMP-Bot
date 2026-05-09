@@ -1,7 +1,17 @@
 require('dotenv').config();
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const fs = require('fs');
+const http = require('http');
 const ticketHandler = require('./handlers/ticketHandler');
+
+// Минимальный HTTP-сервер для Render (требует открытый порт)
+const PORT = process.env.PORT || 3000;
+http.createServer((req, res) => {
+  res.writeHead(200);
+  res.end('CloudSMP Bot is running!');
+}).listen(PORT, () => {
+  console.log(`🌐 HTTP сервер запущен на порту ${PORT}`);
+});
 
 const client = new Client({
   intents: [
