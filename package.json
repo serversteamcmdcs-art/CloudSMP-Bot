@@ -1,0 +1,14 @@
+{
+  "name": "ticket-bot",
+  "version": "1.0.0",
+  "description": "Discord ticket bot for CloudSMP",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "deploy": "node deploy.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.15.0",
+    "dotenv": "^16.4.5"
+  }
+}
