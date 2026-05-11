@@ -12,6 +12,7 @@ const {
 const TICKET_TYPES = {
   ticket_ban:        { name: 'ban-appeal',      label: 'Апелляция бана' },
   ticket_mute:       { name: 'mute-appeal',     label: 'Апелляция мута' },
+  ticket_media:      { name: 'media',           label: 'Медиа' },
   ticket_report:     { name: 'discord-report',  label: 'Жалоба на игрока' },
   ticket_bug:        { name: 'bug-report',      label: 'Баг-репорт' },
   ticket_connection: { name: 'connection',      label: 'Проблема с подключением' },
@@ -45,7 +46,7 @@ function buildModal(customId) {
           .setCustomId('ban_id')
           .setLabel('ID бана')
           .setStyle(TextInputStyle.Short)
-          .setPlaceholder('Обязательно: #3F132FD')
+          .setPlaceholder('Пример: #3F132FD')
           .setRequired(true),
       ),
       new ActionRowBuilder().addComponents(
@@ -78,16 +79,14 @@ function buildModal(customId) {
           .setPlaceholder('Пример: Java 1.21.1 или Bedrock 1.30.3')
           .setRequired(true),
       ),
-      
       new ActionRowBuilder().addComponents(
         new TextInputBuilder()
           .setCustomId('mute_id')
-          .setLabel('ID бана')
+          .setLabel('ID мута')
           .setStyle(TextInputStyle.Short)
-          .setPlaceholder('Обязательно: #3F132FD')
+          .setPlaceholder('Пример: #3F132FD')
           .setRequired(true),
       ),
-      
       new ActionRowBuilder().addComponents(
         new TextInputBuilder()
           .setCustomId('explanation')
