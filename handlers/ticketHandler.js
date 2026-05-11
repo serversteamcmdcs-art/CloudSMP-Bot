@@ -43,10 +43,10 @@ function buildModal(customId) {
       new ActionRowBuilder().addComponents(
         new TextInputBuilder()
           .setCustomId('ban_id')
-          .setLabel('ID бана (необязательно)')
+          .setLabel('ID бана')
           .setStyle(TextInputStyle.Short)
-          .setPlaceholder('Необязательно: #3F132FD')
-          .setRequired(false),
+          .setPlaceholder('Обязательно: #3F132FD')
+          .setRequired(true),
       ),
       new ActionRowBuilder().addComponents(
         new TextInputBuilder()
@@ -78,6 +78,16 @@ function buildModal(customId) {
           .setPlaceholder('Пример: Java 1.21.1 или Bedrock 1.30.3')
           .setRequired(true),
       ),
+      
+      new ActionRowBuilder().addComponents(
+        new TextInputBuilder()
+          .setCustomId('mute_id')
+          .setLabel('ID бана')
+          .setStyle(TextInputStyle.Short)
+          .setPlaceholder('Обязательно: #3F132FD')
+          .setRequired(true),
+      ),
+      
       new ActionRowBuilder().addComponents(
         new TextInputBuilder()
           .setCustomId('explanation')
@@ -358,6 +368,7 @@ module.exports = {
       fields = [
         { label: 'Ваш никнейм',           value: interaction.fields.getTextInputValue('username') },
         { label: 'Платформа и версия',    value: interaction.fields.getTextInputValue('platform') },
+        { label: 'ID мута',               value: interaction.fields.getTextInputValue('mute_id') || '—' },
         { label: 'Объяснение',            value: interaction.fields.getTextInputValue('explanation') },
       ];
     } else if (ticketKey === 'ticket_media') {
