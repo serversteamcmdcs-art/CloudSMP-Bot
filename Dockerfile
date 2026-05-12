@@ -10,7 +10,7 @@ RUN npm install --omit=dev
 # Копируем исходники
 COPY . .
 
-EXPOSE 8080
+EXPOSE 3000
 
 CMD ["node", "deploy.js"]
 
