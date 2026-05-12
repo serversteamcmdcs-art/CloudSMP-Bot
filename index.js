@@ -15,7 +15,7 @@ http.createServer((req, res) => {
 });
 
 // Keepalive — не даёт Render усыплять сервис
-const url = `https://cloudsmp-bot.onrender.com/`; // Замените на URL вашего сервиса
+const url = `https://cloudsmpbot-i60ssy9i.b4a.run/`; // Замените на URL вашего сервиса
 const interval = 30000; // Интервал в миллисекундах (30 секунд)
 function reloadWebsite() {
   axios.get(url)
