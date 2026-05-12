@@ -12,4 +12,5 @@ COPY . .
 
 EXPOSE 3000
 
+CMD ["node", "deploy.js"]
 CMD ["node", "index.js"]
