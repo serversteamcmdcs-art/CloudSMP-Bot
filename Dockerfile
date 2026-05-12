@@ -5,7 +5,7 @@ WORKDIR /app
 # Копируем зависимости отдельно для кэширования слоёв
 COPY package*.json ./
 
-RUN npm ci --omit=dev
+RUN npm install --omit=dev
 
 # Копируем исходники
 COPY . .
