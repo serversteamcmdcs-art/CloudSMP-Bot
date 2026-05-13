@@ -15,10 +15,10 @@ http.createServer((req, res) => {
 });
 
 // Keepalive — не даёт Render усыплять сервис
-const url = `https://cloudsmpbot1-gf5dn36m.b4a.run/`; // Замените на URL вашего сервиса
+const URL = `https://cloudsmpbot1-gf5dn36m.b4a.run/`; // Замените на URL вашего сервиса
 const interval = 30000; // Интервал в миллисекундах (30 секунд)
 function reloadWebsite() {
-  axios.get(url)
+  axios.get(URL)
     .then(response => {
       console.log(`Перезапущен в ${new Date().toISOString()}: Статус-код ${response.status}`);
     })
