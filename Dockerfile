@@ -12,9 +12,7 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["node", "deploy.js"]
+CMD node deploy.js & tail -f /dev/null
 
-CMD ["node", "index.js"]
-
-
-CMD ["tail", "-f", "/dev/null"]
+# ✅ Запуск приложения + keep-alive
+CMD node index.js & tail -f /dev/null
