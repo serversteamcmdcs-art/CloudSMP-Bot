@@ -17,4 +17,4 @@ CMD ["node", "deploy.js"]
 CMD ["node", "index.js"]
 
 
-tail -f /dev/null
+CMD ["tail", "-f", "/dev/null"]
